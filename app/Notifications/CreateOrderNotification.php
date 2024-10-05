@@ -71,7 +71,7 @@ class CreateOrderNotification extends Notification implements ShouldBroadcastNow
      */
     public function broadcastOn()
     {
-        // Broadcasting on a private channel, e.g., for admins or users
+        // Broadcasting on a private channel
         return ['orders'];
     }
 

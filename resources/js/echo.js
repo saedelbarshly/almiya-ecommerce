@@ -14,7 +14,7 @@ window.Echo = new Echo({
 });
 
 
-window.Echo.channel('orders')
+window.Echo.private('orders')
     .listen('CreateOrderNotification', (notification) => {
         let notificationCountElement = document.getElementById('notification-count');
         let currentCount = parseInt(notificationCountElement.innerText);
