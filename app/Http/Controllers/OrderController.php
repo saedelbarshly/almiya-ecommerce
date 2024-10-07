@@ -12,7 +12,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::where('status','order')->paginate(10);
+        $orders = Order::where('status','order')->paginate(5);
         return view('order', compact('orders'));
     }
 
