@@ -8,8 +8,10 @@ use Illuminate\Http\Request;
 class NotificationController extends Controller
 {
     public function index()
-    {
-        $admin = Admin::first();
-        return view('notification', compact('admin'));
-    }
+{
+    $admin = Admin::first();
+    $notifications = $admin->notifications()->paginate(10); // Paginate notifications, 10 per page
+    return view('notification', compact('notifications'));
+}
+
 }

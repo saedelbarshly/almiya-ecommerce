@@ -20,18 +20,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @if ($admin->notifications->count() > 0)    
-                            @foreach ($admin->notifications as $notification)
+                            @if ($notifications->count() > 0)
+                            @foreach ($notifications as $notification)
                                 <tr>
-                                    <td class="border px-4 py-2">
-                                        {{ $loop->iteration }}
-                                    </td>
+                                    <td class="border px-4 py-2">{{ $loop->iteration }}</td>
                                     <td class="border px-4 py-2">{{ $notification->data['message'] }}</td>
                                     <td class="border px-4 py-2">{{ $notification->created_at->diffForHumans() }}</td>
-                                    <td class="border px-4 py-2">{{ $notification->readed_at?->diffForHumans() }}</td>
+                                    <td class="border px-4 py-2">{{ $notification->read_at?->diffForHumans() }}</td>
                                 </tr>
                             @endforeach
-                            @endif
+                        
+                            <!-- Pagination links -->
+                            <tr>
+                                <td colspan="4">
+                                    {{ $notifications->links() }}
+                                </td>
+                            </tr>
+                        @endif
+                            
                         </tbody>
                     </table>
                 </div>
