@@ -29,8 +29,6 @@
                                     <td class="border px-4 py-2">{{ $notification->read_at?->diffForHumans() }}</td>
                                 </tr>
                             @endforeach
-                        
-                            <!-- Pagination links -->
                             <tr>
                                 <td colspan="4">
                                     {{ $notifications->links() }}
